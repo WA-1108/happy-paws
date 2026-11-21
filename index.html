@@ -16,6 +16,7 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0
 .logo{font-weight:800;font-size:1.25rem}
 .btn{display:inline-block;background:#229ed9;color:#fff;text-decoration:none;font-weight:700;padding:13px 26px;border-radius:999px}
 .btn:hover{filter:brightness(1.08)}
+.btn.alt{background:var(--accent)}
 .hero{background:var(--hero);border-radius:0 0 32px 32px;padding:20px 0 56px;text-align:center}
 .hero h1{font-size:clamp(2rem,6vw,3.4rem);line-height:1.15;margin:30px 0 14px}
 .hero p{max-width:620px;margin:0 auto 26px;color:var(--muted);font-size:1.1rem}
@@ -40,11 +41,10 @@ footer{text-align:center;color:var(--muted);padding:30px 0 40px;font-size:.9rem}
 <body>
 <header class="hero">
   <div class="wrap">
-    <nav><span class="logo">🐾 Happy Paws</span><a class="btn tg" href="#" target="_blank" rel="noopener">Join on Telegram</a></nav>
-    <h1>Welcome to Happy Paws 🐶🐱</h1>
+    <nav><span class="logo">Happy Paws</span></nav>
+    <h1>Welcome to Happy Paws</h1>
     <p>We rescue, care for, model, breed and rehome pets with love. Whether you’re looking for a new best friend or a safe place for the one you have, you’re in the right home.</p>
-    <a class="btn tg" href="#" target="_blank" rel="noopener">✈️ Join our Telegram channel</a>
-    <div class="faces">🐕 🐈 🐇 🦜 🐹</div>
+    <a class="btn alt" href="#services">See what we do</a>
   </div>
 </header>
 
@@ -66,7 +66,7 @@ footer{text-align:center;color:var(--muted);padding:30px 0 40px;font-size:.9rem}
   <div class="cta">
     <h2>Join our community on Telegram</h2>
     <p class="sub">See new arrivals, rescue stories, available pets and special offers first, and chat with us directly.</p>
-    <a class="btn tg" href="#" target="_blank" rel="noopener">✈️ Open Telegram Channel</a>
+    <a class="btn tg" href="#" target="_blank" rel="noopener">Open Telegram Channel</a>
   </div>
 </section>
 </main>
