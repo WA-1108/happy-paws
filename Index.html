@@ -28,6 +28,9 @@ h2{font-size:1.8rem;margin:0 0 8px;text-align:center}
 .photo{height:190px;display:flex;align-items:center;justify-content:center;font-size:4.5rem;background-size:cover;background-position:center}
 .c1{background-color:#ffd9c2}.c2{background-color:#cdeee9}.c3{background-color:#e4dcff}.c4{background-color:#ffe9a8}.c5{background-color:#d3ecc2}
 .body{padding:16px 18px 20px}
+.text-card{display:flex;align-items:center;background:var(--hero);border-color:var(--accent)}
+.text-card .body{padding:24px 22px}
+.text-card h3{font-size:1.25rem}
 .card h3{margin:0 0 6px}
 .card p{margin:0;color:var(--muted);font-size:.95rem}
 .cta{background:var(--surface);border:1px solid var(--border);border-radius:28px;padding:40px 24px;text-align:center}
@@ -53,7 +56,7 @@ footer{text-align:center;color:var(--muted);padding:30px 0 40px;font-size:.9rem}
     <article class="card"><div class="photo c1" data-key="rescue" role="img" aria-label="Rescued pet">🐕‍🦺</div><div class="body"><h3>Pet Rescue</h3><p>We save abandoned and injured animals, nurse them back to health and find them loving homes.</p></div></article>
     <article class="card"><div class="photo c2" data-key="care" role="img" aria-label="Pet care">🐈</div><div class="body"><h3>Pet Care</h3><p>Feeding, grooming, boarding and health check-ups, delivered with real affection.</p></div></article>
     <article class="card"><div class="photo c3" data-key="modelling" role="img" aria-label="Pet modelling">📸</div><div class="body"><h3>Pet Modelling</h3><p>Photogenic pets for ads, shoots and brand campaigns. Book a model or enrol yours.</p></div></article>
-    <article class="card"><div class="photo c4" data-key="sales" role="img" aria-label="Pets for sale">🐶</div><div class="body"><h3>Pets for Sale</h3><p>Healthy, vaccinated and well-socialised pets ready to join your family.</p></div></article>
+    <article class="card text-card"><div class="body"><h3>🐶 Pets for Sale</h3><p>Looking for a new family member? We offer healthy, vaccinated and well-socialised pets that are ready to join your home. Every pet is raised with love and goes only to a caring family. Message us on Telegram to see who is available right now, and we will guide you through choosing the right pet for you.</p></div></article>
     <article class="card"><div class="photo c5" data-key="breeding" role="img" aria-label="Breeding">🐇</div><div class="body"><h3>Responsible Breeding</h3><p>Ethical breeding with health-checked parents and proper care for every litter.</p></div></article>
     <article class="card"><div class="photo c1" data-key="more" role="img" aria-label="More pets">🦜</div><div class="body"><h3>And Much More</h3><p>Pet supplies, adoption advice, training tips and a friendly community.</p></div></article>
   </div>
@@ -76,12 +79,12 @@ const TELEGRAM_URL = "https://t.me/YOUR_CHANNEL";
 // Paste an image link (or a file in your repo, e.g. "images/rescue.jpg") between the quotes.
 // Leave "" to keep the emoji placeholder.
 const PHOTOS = {
-  rescue:    "",
-  care:      "",
-  modelling: "",
+  rescue:    "rescue.jpg",
+  care:      "care.jpg",
+  modelling: "modelling.jpg",
   sales:     "",
-  breeding:  "",
-  more:      ""
+  breeding:  "breeding.jpg",
+  more:      "care2.jpg"
 };
 /* ================================== */
 
