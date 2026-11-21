@@ -17,6 +17,20 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0
 .btn{display:inline-block;background:#229ed9;color:#fff;text-decoration:none;font-weight:700;padding:13px 26px;border-radius:999px}
 .btn:hover{filter:brightness(1.08)}
 .btn.alt{background:var(--accent)}
+[hidden]{display:none !important}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.gallery img{width:100%;height:210px;object-fit:cover;border-radius:16px;display:block}
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.quote{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:22px}
+.quote p{margin:0 0 12px;font-style:italic}
+.quote .who{color:var(--muted);font-weight:700;font-size:.9rem}
+.contact-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.contact-item{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:22px;text-align:center}
+.contact-item h3{margin:0 0 6px}
+.contact-item p{margin:0 0 4px;color:var(--muted)}
+.contact-item a{color:var(--accent);font-weight:700;text-decoration:none;word-break:break-word}
+.contact-item a.btn{color:#fff;margin-top:8px}
+.btn.wa{background:#25d366}
 .hero{background:var(--hero);border-radius:0 0 32px 32px;padding:20px 0 56px;text-align:center}
 .hero h1{font-size:clamp(2rem,6vw,3.4rem);line-height:1.15;margin:30px 0 14px}
 .hero p{max-width:620px;margin:0 auto 26px;color:var(--muted);font-size:1.1rem}
@@ -62,6 +76,24 @@ footer{text-align:center;color:var(--muted);padding:30px 0 40px;font-size:.9rem}
   </div>
 </section>
 
+<section id="gallery" hidden>
+  <h2>Happy adopted pets</h2>
+  <p class="sub">Pets we have found loving homes for.</p>
+  <div class="gallery" id="gallery-grid"></div>
+</section>
+
+<section id="testimonials" hidden>
+  <h2>What our clients say</h2>
+  <p class="sub">Kind words from the families we have worked with.</p>
+  <div class="quotes" id="quotes-grid"></div>
+</section>
+
+<section id="contact" hidden>
+  <h2>Contact us</h2>
+  <p class="sub">Reach out any time. We would love to hear from you.</p>
+  <div class="contact-list" id="contact-list"></div>
+</section>
+
 <section id="join">
   <div class="cta">
     <h2>Join our community on Telegram</h2>
@@ -86,6 +118,25 @@ const PHOTOS = {
   breeding:  "breeding.jpg",
   more:      "care2.jpg"
 };
+
+// CONTACT: fill in what you want shown. Empty items are hidden.
+// whatsapp: number with country code, digits only, e.g. "254712345678"
+// mapLink: optional Google Maps link to your location
+const CONTACT = {
+  phone:    "",
+  whatsapp: "",
+  location: "",
+  mapLink:  ""
+};
+
+// GALLERY: file names of your adopted-pet photos, e.g. ["adopted1.jpg", "adopted2.jpg"]
+// The section stays hidden until you add at least one.
+const GALLERY = [];
+
+// TESTIMONIALS: only add real reviews from real clients (with their permission).
+// Example: { name: "Client name", text: "What they said about you." }
+// The section stays hidden until you add at least one.
+const TESTIMONIALS = [];
 /* ================================== */
 
 document.querySelectorAll("a.tg").forEach(a => a.href = TELEGRAM_URL);
@@ -97,6 +148,66 @@ document.querySelectorAll(".photo").forEach(el => {
   img.onload = () => { el.style.backgroundImage = "url('" + url + "')"; el.textContent = ""; };
   img.src = url; // if it fails to load, the emoji stays
 });
+
+/* ---- Gallery ---- */
+const galleryBox = document.getElementById("gallery-grid");
+GALLERY.forEach(src => {
+  const i = new Image();
+  i.alt = "Happy adopted pet";
+  i.loading = "lazy";
+  i.onload = () => { galleryBox.appendChild(i); document.getElementById("gallery").hidden = false; };
+  i.src = src;
+});
+
+/* ---- Testimonials ---- */
+if (TESTIMONIALS.length) {
+  const box = document.getElementById("quotes-grid");
+  TESTIMONIALS.forEach(t => {
+    const d = document.createElement("div");
+    d.className = "quote";
+    const p = document.createElement("p");
+    p.textContent = "\u201C" + t.text + "\u201D";
+    const w = document.createElement("div");
+    w.className = "who";
+    w.textContent = t.name;
+    d.append(p, w);
+    box.appendChild(d);
+  });
+  document.getElementById("testimonials").hidden = false;
+}
+
+/* ---- Contact ---- */
+(function () {
+  const list = document.getElementById("contact-list");
+  function card(title, lines, btn) {
+    const d = document.createElement("div");
+    d.className = "contact-item";
+    const h = document.createElement("h3");
+    h.textContent = title;
+    d.appendChild(h);
+    lines.forEach(l => { d.appendChild(l); });
+    if (btn) d.appendChild(btn);
+    list.appendChild(d);
+  }
+  function line(text) { const p = document.createElement("p"); p.textContent = text; return p; }
+  function link(text, href, cls, newTab) {
+    const a = document.createElement("a");
+    a.textContent = text; a.href = href;
+    if (cls) a.className = cls;
+    if (newTab) { a.target = "_blank"; a.rel = "noopener"; }
+    return a;
+  }
+  if (CONTACT.phone) {
+    card("Call us", [line(CONTACT.phone)], link("Call now", "tel:" + CONTACT.phone.replace(/[^\d+]/g, ""), "btn alt"));
+  }
+  if (CONTACT.whatsapp) {
+    card("WhatsApp", [line("Chat with us directly")], link("Open WhatsApp", "https://wa.me/" + CONTACT.whatsapp.replace(/\D/g, ""), "btn wa", true));
+  }
+  if (CONTACT.location) {
+    card("Find us", [line(CONTACT.location)], CONTACT.mapLink ? link("View on map", CONTACT.mapLink, "btn alt", true) : null);
+  }
+  if (list.children.length) document.getElementById("contact").hidden = false;
+})();
 </script>
 </body>
 </html>
