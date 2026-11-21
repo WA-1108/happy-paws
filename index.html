@@ -17,6 +17,16 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0
 .btn{display:inline-block;background:#229ed9;color:#fff;text-decoration:none;font-weight:700;padding:13px 26px;border-radius:999px}
 .btn:hover{filter:brightness(1.08)}
 .btn.alt{background:var(--accent)}
+.hero{position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:var(--dog);background-size:210px auto;pointer-events:none}
+.hero .wrap{position:relative}
+.hero.has-photo{background-size:cover;background-position:center;color:#fff}
+.hero.has-photo p{color:#f3e9de}
+.hero.has-photo::before{background-image:var(--dogw)}
+.hero.has-photo .logo{color:#fff}
+:root{--dog:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 170'%3E%3Cg fill='%23000' opacity='.07'%3E%3Cg transform='translate%288 8%29 scale%28.85%29'%3E%3Crect x='28' y='28' width='62' height='26' rx='13'/%3E%3Ccircle cx='96' cy='26' r='13'/%3E%3Cellipse cx='108' cy='31' rx='9' ry='6'/%3E%3Cellipse cx='88' cy='22' rx='5' ry='10' transform='rotate%2820 88 22%29'/%3E%3Crect x='34' y='48' width='9' height='24' rx='4.5'/%3E%3Crect x='50' y='48' width='9' height='24' rx='4.5'/%3E%3Crect x='70' y='48' width='9' height='24' rx='4.5'/%3E%3Crect x='82' y='48' width='9' height='24' rx='4.5'/%3E%3Cpath d='M30 34 Q12 30 14 14' fill='none' stroke='%23000' stroke-width='7' stroke-linecap='round'/%3E%3C/g%3E%3Cg transform='translate%28250 92%29 scale%28-.85 .85%29'%3E%3Crect x='28' y='28' width='62' height='26' rx='13'/%3E%3Ccircle cx='96' cy='26' r='13'/%3E%3Cellipse cx='108' cy='31' rx='9' ry='6'/%3E%3Cellipse cx='88' cy='22' rx='5' ry='10' transform='rotate%2820 88 22%29'/%3E%3Crect x='34' y='48' width='9' height='24' rx='4.5'/%3E%3Crect x='50' y='48' width='9' height='24' rx='4.5'/%3E%3Crect x='70' y='48' width='9' height='24' rx='4.5'/%3E%3Crect x='82' y='48' width='9' height='24' rx='4.5'/%3E%3Cpath d='M30 34 Q12 30 14 14' fill='none' stroke='%23000' stroke-width='7' stroke-linecap='round'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");--dogw:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 170'%3E%3Cg fill='%23fff' opacity='.09'%3E%3Cg transform='translate%288 8%29 scale%28.85%29'%3E%3Crect x='28' y='28' width='62' height='26' rx='13'/%3E%3Ccircle cx='96' cy='26' r='13'/%3E%3Cellipse cx='108' cy='31' rx='9' ry='6'/%3E%3Cellipse cx='88' cy='22' rx='5' ry='10' transform='rotate%2820 88 22%29'/%3E%3Crect x='34' y='48' width='9' height='24' rx='4.5'/%3E%3Crect x='50' y='48' width='9' height='24' rx='4.5'/%3E%3Crect x='70' y='48' width='9' height='24' rx='4.5'/%3E%3Crect x='82' y='48' width='9' height='24' rx='4.5'/%3E%3Cpath d='M30 34 Q12 30 14 14' fill='none' stroke='%23fff' stroke-width='7' stroke-linecap='round'/%3E%3C/g%3E%3Cg transform='translate%28250 92%29 scale%28-.85 .85%29'%3E%3Crect x='28' y='28' width='62' height='26' rx='13'/%3E%3Ccircle cx='96' cy='26' r='13'/%3E%3Cellipse cx='108' cy='31' rx='9' ry='6'/%3E%3Cellipse cx='88' cy='22' rx='5' ry='10' transform='rotate%2820 88 22%29'/%3E%3Crect x='34' y='48' width='9' height='24' rx='4.5'/%3E%3Crect x='50' y='48' width='9' height='24' rx='4.5'/%3E%3Crect x='70' y='48' width='9' height='24' rx='4.5'/%3E%3Crect x='82' y='48' width='9' height='24' rx='4.5'/%3E%3Cpath d='M30 34 Q12 30 14 14' fill='none' stroke='%23fff' stroke-width='7' stroke-linecap='round'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+@media (prefers-color-scheme:dark){:root{--dog:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 170'%3E%3Cg fill='%23fff' opacity='.09'%3E%3Cg transform='translate%288 8%29 scale%28.85%29'%3E%3Crect x='28' y='28' width='62' height='26' rx='13'/%3E%3Ccircle cx='96' cy='26' r='13'/%3E%3Cellipse cx='108' cy='31' rx='9' ry='6'/%3E%3Cellipse cx='88' cy='22' rx='5' ry='10' transform='rotate%2820 88 22%29'/%3E%3Crect x='34' y='48' width='9' height='24' rx='4.5'/%3E%3Crect x='50' y='48' width='9' height='24' rx='4.5'/%3E%3Crect x='70' y='48' width='9' height='24' rx='4.5'/%3E%3Crect x='82' y='48' width='9' height='24' rx='4.5'/%3E%3Cpath d='M30 34 Q12 30 14 14' fill='none' stroke='%23fff' stroke-width='7' stroke-linecap='round'/%3E%3C/g%3E%3Cg transform='translate%28250 92%29 scale%28-.85 .85%29'%3E%3Crect x='28' y='28' width='62' height='26' rx='13'/%3E%3Ccircle cx='96' cy='26' r='13'/%3E%3Cellipse cx='108' cy='31' rx='9' ry='6'/%3E%3Cellipse cx='88' cy='22' rx='5' ry='10' transform='rotate%2820 88 22%29'/%3E%3Crect x='34' y='48' width='9' height='24' rx='4.5'/%3E%3Crect x='50' y='48' width='9' height='24' rx='4.5'/%3E%3Crect x='70' y='48' width='9' height='24' rx='4.5'/%3E%3Crect x='82' y='48' width='9' height='24' rx='4.5'/%3E%3Cpath d='M30 34 Q12 30 14 14' fill='none' stroke='%23fff' stroke-width='7' stroke-linecap='round'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}}
+
 [hidden]{display:none !important}
 .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
 .gallery img{width:100%;height:210px;object-fit:cover;border-radius:16px;display:block}
@@ -67,12 +77,12 @@ footer{text-align:center;color:var(--muted);padding:30px 0 40px;font-size:.9rem}
   <h2>What we do</h2>
   <p class="sub">Everything for pets and the people who love them, all in one place.</p>
   <div class="grid">
-    <article class="card"><div class="photo c1" data-key="rescue" role="img" aria-label="Rescued pet">🐕‍🦺</div><div class="body"><h3>Pet Rescue</h3><p>We save abandoned and injured animals, nurse them back to health and find them loving homes.</p></div></article>
-    <article class="card"><div class="photo c2" data-key="care" role="img" aria-label="Pet care">🐈</div><div class="body"><h3>Pet Care</h3><p>Feeding, grooming, boarding and health check-ups, delivered with real affection.</p></div></article>
-    <article class="card"><div class="photo c3" data-key="modelling" role="img" aria-label="Pet modelling">📸</div><div class="body"><h3>Pet Modelling</h3><p>Photogenic pets for ads, shoots and brand campaigns. Book a model or enrol yours.</p></div></article>
-    <article class="card text-card"><div class="body"><h3>🐶 Pets for Sale</h3><p>Looking for a new family member? We offer healthy, vaccinated and well-socialised pets that are ready to join your home. Every pet is raised with love and goes only to a caring family. Message us on Telegram to see who is available right now, and we will guide you through choosing the right pet for you.</p></div></article>
-    <article class="card"><div class="photo c5" data-key="breeding" role="img" aria-label="Breeding">🐇</div><div class="body"><h3>Responsible Breeding</h3><p>Ethical breeding with health-checked parents and proper care for every litter.</p></div></article>
-    <article class="card"><div class="photo c1" data-key="more" role="img" aria-label="More pets">🦜</div><div class="body"><h3>And Much More</h3><p>Pet supplies, adoption advice, training tips and a friendly community.</p></div></article>
+    <article class="card"><div class="photo c1" data-key="rescue" role="img" aria-label="Rescued pet"></div><div class="body"><h3>Pet Rescue</h3><p>We save abandoned and injured animals, nurse them back to health and find them loving homes.</p></div></article>
+    <article class="card"><div class="photo c2" data-key="care" role="img" aria-label="Pet care"></div><div class="body"><h3>Pet Care</h3><p>Feeding, grooming, boarding and health check-ups, delivered with real affection.</p></div></article>
+    <article class="card"><div class="photo c3" data-key="modelling" role="img" aria-label="Pet modelling"></div><div class="body"><h3>Pet Modelling</h3><p>Photogenic pets for ads, shoots and brand campaigns. Book a model or enrol yours.</p></div></article>
+    <article class="card text-card"><div class="body"><h3>Pets for Sale</h3><p>Looking for a new family member? We offer healthy, vaccinated and well-socialised pets that are ready to join your home. Every pet is raised with love and goes only to a caring family. Message us on Telegram to see who is available right now, and we will guide you through choosing the right pet for you.</p></div></article>
+    <article class="card"><div class="photo c5" data-key="breeding" role="img" aria-label="Breeding"></div><div class="body"><h3>Responsible Breeding</h3><p>Ethical breeding with health-checked parents and proper care for every litter.</p></div></article>
+    <article class="card"><div class="photo c1" data-key="more" role="img" aria-label="More pets"></div><div class="body"><h3>And Much More</h3><p>Pet supplies, adoption advice, training tips and a friendly community.</p></div></article>
   </div>
 </section>
 
@@ -119,6 +129,10 @@ const PHOTOS = {
   more:      "care2.jpg"
 };
 
+// HERO_IMAGE: a dog photo for the welcome area background, e.g. "dogs-hero.jpg"
+// Leave "" to use the soft dog pattern only.
+const HERO_IMAGE = "";
+
 // CONTACT: fill in what you want shown. Empty items are hidden.
 // whatsapp: number with country code, digits only, e.g. "254712345678"
 // mapLink: optional Google Maps link to your location
@@ -148,6 +162,17 @@ document.querySelectorAll(".photo").forEach(el => {
   img.onload = () => { el.style.backgroundImage = "url('" + url + "')"; el.textContent = ""; };
   img.src = url; // if it fails to load, the emoji stays
 });
+
+/* ---- Welcome background photo ---- */
+if (HERO_IMAGE) {
+  const hero = document.querySelector(".hero");
+  const im = new Image();
+  im.onload = () => {
+    hero.style.backgroundImage = "linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url('" + HERO_IMAGE + "')";
+    hero.classList.add("has-photo");
+  };
+  im.src = HERO_IMAGE;
+}
 
 /* ---- Gallery ---- */
 const galleryBox = document.getElementById("gallery-grid");
